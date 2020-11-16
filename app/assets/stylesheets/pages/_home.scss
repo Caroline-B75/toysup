@@ -1,1 +1,11 @@
 // Specific CSS for your home-page
+.full-height-container {
+  height: calc(100vh - 181px); // 181 = sum navbar height + footer height => adapt image size to full height srcreen
+  width: 100%;
+}
+
+.container-home {
+  background-image: url("https://images.unsplash.com/photo-1551124054-0324fbd83227?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80");
+  background-position: center;
+  background-size: cover;
+}
