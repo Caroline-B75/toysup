@@ -16,6 +16,7 @@
     <%= cl_image_tag @toy.photo.key, height: 300, width: 400, crop: :fill %>
     <% end %>
 
+    <%= link_to "Supprimer", toy_path(@toy), method: :delete %>
   </div>
 
 </div>

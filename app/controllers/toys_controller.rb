@@ -22,6 +22,11 @@ class ToysController < ApplicationController
     end
   end
 
+  def destroy
+    @toy = Toy.find(params[:id])
+    @toy.destroy
+    redirect_to toys_path
+  end
 
   private
 
