@@ -28,6 +28,18 @@ class ToysController < ApplicationController
     redirect_to toys_path
   end
 
+  def edit
+    @toy = Toy.find(params[:id])
+  end
+
+
+  def update
+    @toy = Toy.find(params[:id])
+    @toy.update(toy_params)
+
+    redirect_to toy_path(@toy)
+  end
+
   private
 
   def toy_params
