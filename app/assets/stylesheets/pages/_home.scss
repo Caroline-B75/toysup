@@ -13,9 +13,21 @@
   background-size: cover;
 }
 
-.home-title h2 {
-  margin-top: 80px;
-  font-family: Pacifico;
-  font-size: 30px;
-  color: grey;
+@media (max-width: 2500px) {
+  .home-title h2 {
+    margin-top: 80px;
+    padding: 20px;
+    font-family: Pacifico;
+    font-size: 35px;
+    color: grey;
+  }
+}
+
+@media (max-width: 850px) {
+  .home-title h2 {
+    margin-top: 50px;
+    font-family: Pacifico;
+    font-size: 30px;
+    color: grey;
+  }
 }
