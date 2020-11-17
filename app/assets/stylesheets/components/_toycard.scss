@@ -1,0 +1,40 @@
+.toycontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  position: relative;
+  top: 100px;
+  margin: 25px;
+  justify-content: center;
+}
+
+.toycard {
+  background-color: white;
+  width: 350px;
+  height: 400px;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 10px;
+  li{list-style-type: none;};
+  box-shadow: 5px 5px 5px lightgrey;
+}
+
+.toyname {
+  font-family: Pacifico;
+  font-size: 30px;
+  color: #43194D;
+  text-align: center;
+}
+
+.toy-info {
+  font-style: italic;
+  font-size: 20px;
+}
+
+
+.toyphoto {
+  position: relative;
+  top: 10px;
+  text-align: center;
+}
+
