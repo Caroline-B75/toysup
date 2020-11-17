@@ -1,22 +1,39 @@
-<div class="container-show">
+<div class="container">
 
-  <div class="show-title">
-    <h1><%= @toy.name %></h1>
-  </div>
+  <div class="container-show">
 
-  <div class="container-description">
-    <h2>Description</h2>
-    <p><%= @toy.description %></p>
+    <div class="container-left">
+      <div class="show-title">
+        <%= @toy.name %></h1>
+      </div>
+      <div>
+        <h2>Picture</h2>
+        <% if @toy.photo.attached? %>
+        <%= cl_image_tag @toy.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      </div>
+    </div>
 
-    <h2>Unit price</h2>
-    <p><%= @toy.unit_price %></p>
+    <div class="container-right">
 
-    <h2>Picture</h2>
-    <% if @toy.photo.attached? %>
-    <%= cl_image_tag @toy.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
+      <div>
+        <h2>Description</h2>
+        <p><%= @toy.description %></p>
+      </div>
 
+      <div>
+        <h2>Unit price</h2>
+        <p><%= @toy.unit_price %></p>
+      </div>
+
+      <div>
+        <h2>Category</h2>
+        <p><%= @toy.category %></p>
+      </div>
     <%= link_to "Supprimer", toy_path(@toy), method: :delete %>
-  </div>
+    </div>
 
+    </div>
+
+  </div>
 </div>
