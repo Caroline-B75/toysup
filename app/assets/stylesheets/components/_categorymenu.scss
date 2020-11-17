@@ -1,0 +1,23 @@
+.categorymenu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: fixed;
+  top: 330px;
+}
+
+.categorycards {
+  width: 250px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+.categorycards p {
+  font-family: Pacifico;
+  color: #1EA896;
+  font-size: 20px;
+  line-height: 50px;
+}
