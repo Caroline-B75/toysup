@@ -33,6 +33,8 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'simple_form'
 
+gem 'dotenv-rails', groups: [:development, :test]
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

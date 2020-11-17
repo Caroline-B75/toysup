@@ -5,5 +5,5 @@ class Toy < ApplicationRecord
   validates :name, :description, :unit_price, :category, presence: true
   validates :unit_price, numericality: true
   validates_inclusion_of :category, in: CATEGORY
-  has_one_attached :photo
+  # has_one_attached :photo
 end
