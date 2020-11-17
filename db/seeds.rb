@@ -27,5 +27,5 @@ toy_list = [
 ]
 
 toy_list.each do |name, description, unit_price, category, photo, user_id|
-  Toys.create( name: name, description: description, unit_price: unit_price, category: category, photo: photo, user_id: user_id )
+  Toy.create( name: name, description: description, unit_price: unit_price, category: category, photo: photo, user_id: user_id )
 end
