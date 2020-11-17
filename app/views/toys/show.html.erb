@@ -1,0 +1,22 @@
+<div class="container-show">
+
+  <div class="show-title">
+    <h1><%= @toy.name %></h1>
+  </div>
+
+  <div class="container-description">
+    <h2>Description</h2>
+    <p><%= @toy.description %></p>
+
+    <h2>Unit price</h2>
+    <p><%= @toy.unit_price %></p>
+
+    <h2>Picture</h2>
+    <% if @toy.photo.attached? %>
+    <%= cl_image_tag @toy.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
+
+    <%= link_to "Supprimer", toy_path(@toy), method: :delete %>
+  </div>
+
+</div>
