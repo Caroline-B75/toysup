@@ -2,9 +2,9 @@
   <h1>Récapitulatif de ma commande:</h1>
   <div class="rent-recap">
     <div class="rent-info">
-      <h5>Jouet loué :</h5>
+      <h5>Jouet :</h5>
       <p><%= @toy.name %></p>
-      <h5>Joué loué par :</h5>
+      <h5>Loué par :</h5>
       <p><%= @toy_user.name %>L</p>
       <h5>Prix de la location par jour :</h5>
       <p><%= @toy.unit_price %>€</p>
@@ -15,7 +15,7 @@
       <%= link_to "Annuler ma location", rent_path, method: :delete, data: { confirm: "Êtes-vous sûr ?" }, class: 'btn-rent' %>
     </div>
      <div class="rent-photo">
-      <%= cl_image_tag @toy.photo.key, width: 300, height: 390, crop: :fill %>
+      <%= cl_image_tag @toy.photo.key, width: 300, height: 415, crop: :fill %>
     </div>
   </div>
   <br>

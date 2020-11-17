@@ -3,9 +3,9 @@
   <% @rents.each do |rent|  %>
     <div class="rent-recap">
       <div class="rent-info">
-        <h5>Jouet loué :</h5>
+        <h5>Jouet :</h5>
         <p><%= Toy.find(rent.toy_id).name %></p>
-        <h5>Joué loué par :</h5>
+        <h5>Loué par :</h5>
         <p><%= User.find(Toy.find(rent.toy_id).user_id).name %>L</p>
         <h5>Prix de la location par jour :</h5>
         <p><%= Toy.find(rent.toy_id).unit_price %>€</p>
