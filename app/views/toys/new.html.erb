@@ -1,0 +1,8 @@
+<%= simple_form_for [ @toy ] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :category, :collection => Toy::CATEGORY %>
+  <%= f.input :photo, as: :file%>
+  <%= f.input :unit_price, as: :integer %>
+  <%= f.submit "Submit", class: "btn btn-primary" %>
+<% end %>

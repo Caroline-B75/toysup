@@ -3,12 +3,12 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  position: fixed;
-  top: 330px;
+  position: relative;
+  top: 15px;
 }
 
 .categorycards {
-  width: 250px;
+  width: 280px;
   height: 50px;
   margin: 5px;
   border-radius: 15px;
@@ -18,7 +18,7 @@
 .categorycards p {
   font-family: Pacifico;
   color: #1EA896;
-  font-size: 20px;
+  font-size: 25px;
   line-height: 50px;
   text-decoration: wavy underline;
 }
@@ -28,5 +28,9 @@
   color: #1EA896;
   font-size: 20px;
   line-height: 50px;
+  text-decoration: none;
+}
+
+.categorycards a:hover {
   text-decoration: none;
 }
