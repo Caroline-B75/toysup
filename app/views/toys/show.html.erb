@@ -11,6 +11,11 @@
     <h2>Unit price</h2>
     <p>@toy.unit_price</p>
 
+    <h2>Picture</h2>
+    <% if @toy.photo.attached? %>
+      <%= cl_image_path @toy.photo.key, height: 300, width: 400, crop: :fill %>')">
+    <% end %>
+
   </div>
 
 </div>
