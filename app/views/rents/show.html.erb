@@ -1,0 +1,22 @@
+<div>
+  <h1>Récapitulatif de ma commande:</h1>
+  <h5>Jouet loué :</h5>
+  <p><%= @toy.name %></p>
+  <%= cl_image_tag @toy.photo.key, width: 200, height: 300, crop: :fill %>
+  <br>
+  <h5>Joué loué par :</h5>
+  <p><%= @toy_user.name %></p>
+  <br>
+  <h5>Prix de la location par jour :</h5>
+  <p><%= @toy.unit_price %>€</p>
+  <br>
+  <h5>Durée de la location :</h5>
+  <p><%= @rent.duration %> jours</p>
+  <br>
+  <h5>Prix total de la location :</h5>
+  <p><%= @rent.price %>€</p>
+
+  <%= link_to "Annuler ma location", rent_path, method: :delete, data: { confirm: "Êtes-vous sûr ?" } %>
+  <br>
+  <%= link_to "Mes locations", rents_path %>
+</div>

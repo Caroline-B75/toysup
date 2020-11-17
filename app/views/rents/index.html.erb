@@ -1,0 +1,14 @@
+<h1>Mes locations</h1>
+
+<% @rents.each do |rent|  %>
+  <h2>Jouet loué :</h2>
+  <p><%= Toy.find(rent.toy_id).name %></p>
+  <%= cl_image_tag Toy.find(rent.toy_id).photo.key, width: 200, height: 300, crop: :fill %>
+  <br>
+  <h2>Durée de la location :</h2>
+  <p><%= rent.duration %></p>
+  <br>
+  <h2>Prix de la location :</h2>
+  <p><%= rent.price %>€</p>
+  <%= link_to "Annuler cette location", rent_path(rent), method: :delete, data: { confirm: "Êtes-vous sûr ?" } %>
+<% end %>

@@ -1,0 +1,6 @@
+<div class="container-show">
+  <%= simple_form_for [@rent], url: toy_rents_path do |f| %>
+    <%= f.input :duration %>
+    <%= f.submit "Submit", class: 'btn btn-principal' %>
+  <% end %>
+</div>
