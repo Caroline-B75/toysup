@@ -1,22 +1,23 @@
-<div>
+<div class="rent-container">
   <h1>Récapitulatif de ma commande:</h1>
-  <h5>Jouet loué :</h5>
-  <p><%= @toy.name %></p>
-  <%= cl_image_tag @toy.photo.key, width: 200, height: 300, crop: :fill %>
+  <div class="rent-recap">
+    <div class="rent-info">
+      <h5>Jouet loué :</h5>
+      <p><%= @toy.name %></p>
+      <h5>Joué loué par :</h5>
+      <p><%= @toy_user.name %>L</p>
+      <h5>Prix de la location par jour :</h5>
+      <p><%= @toy.unit_price %>€</p>
+      <h5>Durée de la location :</h5>
+      <p><%= @rent.duration %> jours</p>
+      <h5>Prix total de la location :</h5>
+      <p><%= @rent.price %>€</p>
+      <%= link_to "Annuler ma location", rent_path, method: :delete, data: { confirm: "Êtes-vous sûr ?" }, class: 'btn-rent' %>
+    </div>
+     <div class="rent-photo">
+      <%= cl_image_tag @toy.photo.key, width: 300, height: 390, crop: :fill %>
+    </div>
+  </div>
   <br>
-  <h5>Joué loué par :</h5>
-  <p><%= @toy_user.name %></p>
-  <br>
-  <h5>Prix de la location par jour :</h5>
-  <p><%= @toy.unit_price %>€</p>
-  <br>
-  <h5>Durée de la location :</h5>
-  <p><%= @rent.duration %> jours</p>
-  <br>
-  <h5>Prix total de la location :</h5>
-  <p><%= @rent.price %>€</p>
-
-  <%= link_to "Annuler ma location", rent_path, method: :delete, data: { confirm: "Êtes-vous sûr ?" } %>
-  <br>
-  <%= link_to "Mes locations", rents_path %>
+  <%= link_to "Toutes mes locations", rents_path, class: 'btn-rent' %>
 </div>

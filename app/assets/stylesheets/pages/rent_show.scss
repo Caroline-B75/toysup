@@ -1,0 +1,42 @@
+.rent-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}
+
+.rent-recap {
+  display: flex;
+  width: 700px;
+  border: solid #612371 2px;
+  border-radius: 5px;
+  margin: 10px;
+  h5 {
+    font-size: 22px;
+    color: #9e3bb7;
+  }
+  p {
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+  .btn-rent {
+    width: 100%;
+    padding: 4px;
+    margin: 0px;
+  }
+}
+
+.rent-info {
+  flex-grow: 1;
+  padding: 25px 0px 25px 25px;
+}
+
+.btn-rent {
+  width: 700px;
+  background: #9e3bb7;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  padding: 4px;
+  margin: 10px;
+}
