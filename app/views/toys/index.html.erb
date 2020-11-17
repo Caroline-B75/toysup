@@ -4,6 +4,7 @@
     <li> <%= toy.description %> </li>
     <li> <%= toy.category %> </li>
     <li> <%= toy.unit_price %> </li>
+    <%= link_to "supprimer", toy_path(toy), method: :delete %>
   <% end %>
 </ul>
 
