@@ -6,8 +6,7 @@
       <div class="show-title">
         <%= @toy.name %></h1>
       </div>
-      <div>
-        <h2>Picture</h2>
+      <div class="container-left-image">
         <% if @toy.photo.attached? %>
         <%= cl_image_tag @toy.photo.key, height: 300, width: 400, crop: :fill %>
         <% end %>
@@ -15,22 +14,24 @@
     </div>
 
     <div class="container-right">
-
-      <div>
+      <div class="container-right-detail">
         <h2>Description</h2>
         <p><%= @toy.description %></p>
       </div>
 
-      <div>
+      <div class="container-right-detail">
         <h2>Unit price</h2>
         <p><%= @toy.unit_price %></p>
       </div>
 
-      <div>
+      <div class="container-right-detail">
         <h2>Category</h2>
         <p><%= @toy.category %></p>
       </div>
-    <%= link_to "Supprimer", toy_path(@toy), method: :delete %>
+      <div class="container-right-links">
+        <%= link_to "Louer", new_toy_rent_path(@toy), class: "btn btn-primary btn-rent" %>
+        <%= link_to "Supprimer", toy_path(@toy), method: :delete, class: "delete-link" %>
+      </div>
     </div>
 
     </div>

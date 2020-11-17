@@ -13,19 +13,56 @@
 }
 
 .container-left {
-  margin: 15px;
+  margin: 15px 40px;
   .show-title {
     font-family: Pacifico;
     font-size: 50px;
+    color: #43194d;
   }
-  h1 {
-    font-size: 20px;
+  h2 {
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: Merriweather;
   }
 }
 
+.container-left-image {
+  margin-top: 25px;
+}
 .container-right {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
-  margin: 40px;
+  margin: 15px 40px;
+  font-family: Merriweather;
+    h2 {
+      color: #1EA896;
+    }
+    p {
+    font-size: 20px;
+  }
+
+}
+
+.container-right-detail {
+  padding: 15px;
+}
+
+.container-right-links {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+    .delete-link {
+      text-decoration: none;
+      color: #9e3ab7;
+    }
+}
+
+.btn-rent {
+  margin-bottom: 10px;
+  background-color: #1EA896;
+  border: #1EA896;
+}
+
+.btn-rent:hover {
+  background-color: #148879;
 }
