@@ -6,7 +6,7 @@ class CreateToys < ActiveRecord::Migration[6.0]
       t.string :category
       t.string :photo
       t.integer :unit_price
-      t.references :user, null: false, foreign_key: true
+      # t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
