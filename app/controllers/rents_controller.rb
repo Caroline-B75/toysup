@@ -16,7 +16,7 @@ class RentsController < ApplicationController
   def create
     @toy = Toy.find(params[:toy_id])
     @price = params[:rent][:duration].to_i * @toy.unit_price
-    @rent = Rent.create(duration: params[:rent][:duration], price: @price, status: "en cours", toy_id: params[:toy_id], user_id: current_user.id)
+    @rent = Rent.create(duration: params[:rent][:duration], price: @price, status: "en attente de confirmation", toy_id: params[:toy_id], user_id: current_user.id)
     if @rent.save
       redirect_to rent_path(@rent)
     else

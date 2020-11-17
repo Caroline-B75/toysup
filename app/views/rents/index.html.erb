@@ -2,21 +2,26 @@
   <h1>Mes locations</h1>
   <% @rents.each do |rent|  %>
     <div class="rent-recap">
-      <div class="rent-info">
-        <h5>Jouet :</h5>
-        <p><%= Toy.find(rent.toy_id).name %></p>
-        <h5>Loué par :</h5>
-        <p><%= User.find(Toy.find(rent.toy_id).user_id).name %>L</p>
-        <h5>Prix de la location par jour :</h5>
-        <p><%= Toy.find(rent.toy_id).unit_price %>€</p>
-        <h5>Durée de la location :</h5>
-        <p><%= rent.duration %> jours</p>
-        <h5>Prix total de la location :</h5>
-        <p><%= rent.price %>€</p>
-        <%= link_to "Annuler ma location", method: :delete, data: { confirm: "Êtes-vous sûr ?" }, class: 'btn-rent' %>
+      <div class="rent-status">
+        <p>Statut de la location : <%= rent.status %></p>
       </div>
-      <div class="rent-photo">
-        <%= cl_image_tag Toy.find(rent.toy_id).photo.key, width: 300, height: 390, crop: :fill %>
+      <div class="rent-content">
+        <div class="rent-info">
+          <h5>Jouet :</h5>
+          <p><%= Toy.find(rent.toy_id).name %></p>
+          <h5>Loué par :</h5>
+          <p><%= User.find(Toy.find(rent.toy_id).user_id).name %></p>
+          <h5>Prix de la location par jour :</h5>
+          <p><%= Toy.find(rent.toy_id).unit_price %>€</p>
+          <h5>Durée de la location :</h5>
+          <p><%= rent.duration %> jours</p>
+          <h5>Prix total de la location :</h5>
+          <p><%= rent.price %>€</p>
+          <%= link_to "Annuler ma location", method: :delete, data: { confirm: "Êtes-vous sûr ?" }, class: 'btn-rent' %>
+        </div>
+        <div class="rent-photo">
+          <%= cl_image_tag Toy.find(rent.toy_id).photo.key, width: 350, height: 480, crop: :fill %>
+        </div>
       </div>
     </div>
   <% end %>
