@@ -1,22 +1,40 @@
-<div class="container-show">
+<div class="container">
 
-  <div class="show-title">
-    <h1><%= @toy.name %></h1>
+  <div class="container-show">
+
+    <div class="container-left">
+      <div class="show-title">
+        <%= @toy.name %></h1>
+      </div>
+      <div class="container-left-image">
+        <% if @toy.photo.attached? %>
+        <%= cl_image_tag @toy.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="container-right">
+      <div class="container-right-detail">
+        <h2>Description</h2>
+        <p><%= @toy.description %></p>
+      </div>
+
+      <div class="container-right-detail">
+        <h2>Unit price</h2>
+        <p><%= @toy.unit_price %></p>
+      </div>
+
+      <div class="container-right-detail">
+        <h2>Category</h2>
+        <p><%= @toy.category %></p>
+      </div>
+      <div class="container-right-links">
+        <%= link_to "Louer", new_toy_rent_path(@toy), class: "btn btn-primary btn-rent" %>
+        <%= link_to "Supprimer", toy_path(@toy), method: :delete, class: "delete-link" %>
+      </div>
+    </div>
+
+    </div>
+
   </div>
-
-  <div class="container-description">
-    <h2>Description</h2>
-    <p><%= @toy.description %></p>
-
-    <h2>Unit price</h2>
-    <p><%= @toy.unit_price %></p>
-
-    <h2>Picture</h2>
-    <% if @toy.photo.attached? %>
-    <%= cl_image_tag @toy.photo.key, height: 300, width: 400, crop: :fill %>
-    <% end %>
-
-    <%= link_to "Supprimer", toy_path(@toy), method: :delete %>
-  </div>
-
 </div>

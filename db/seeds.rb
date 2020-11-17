@@ -5,7 +5,10 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!(name: "Caroline", email: "caroline.belmas@gmail.com", password: "123456")
+User.destroy_all
+Toy.destroy_all
+
+User.create!(name: "Toysup", email: "contact@toysup.com", password: "123456")
 
 toy_list = [
   [ "Jeu d'engrenage - GOKI", "Place les engrenages sur les couleurs correspondantes et actionne la roue bleue et son petit bouton de préhension... C'est tout le puzzle qui s'anime ! Une excellente approche sensorielle d'un grand principe mécanique.", 1, "0-2 ans", "https://libetlou.com/170-medium_default/jeu-des-engrenages-goki.jpg",1],
