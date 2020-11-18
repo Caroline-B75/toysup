@@ -1,0 +1,7 @@
+<%= simple_form_for(@toy) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.select :category, Toy::CATEGORY %>
+  <%= f.input :unit_price %>
+  <%= f.submit %>
+<% end %>

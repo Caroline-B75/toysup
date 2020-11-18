@@ -10,23 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2020_11_17_133259) do
-ActiveRecord::Schema.define(version: 2020_11_17_132555) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "rents", force: :cascade do |t|
-    t.integer "duration"
-    t.integer "price"
-    t.string "status"
-    t.bigint "toy_id", null: false
-    t.bigint "user_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["toy_id"], name: "index_rents_on_toy_id"
-    t.index ["user_id"], name: "index_rents_on_user_id"
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -47,6 +34,18 @@ ActiveRecord::Schema.define(version: 2020_11_17_132555) do
     t.string "checksum", null: false
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
+
+  create_table "rents", force: :cascade do |t|
+    t.integer "duration"
+    t.integer "price"
+    t.string "status", default: "en attente"
+    t.bigint "toy_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["toy_id"], name: "index_rents_on_toy_id"
+    t.index ["user_id"], name: "index_rents_on_user_id"
   end
 
   create_table "toys", force: :cascade do |t|
@@ -73,9 +72,8 @@ ActiveRecord::Schema.define(version: 2020_11_17_132555) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-
+  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "rents", "toys"
   add_foreign_key "rents", "users"
-  add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "toys", "users"
 end
