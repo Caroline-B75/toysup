@@ -11,6 +11,7 @@ class RentsController < ApplicationController
 
   def new
     @rent = Rent.new
+    @toy = Toy.find(params[:toy_id])
   end
 
   def create
