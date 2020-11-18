@@ -1,6 +1,42 @@
-<div class="container-show">
-  <%= simple_form_for [@rent], url: toy_rents_path do |f| %>
-    <%= f.input :duration %>
-    <%= f.submit "Submit", class: 'btn btn-principal' %>
-  <% end %>
+<div class="container">
+
+  <div class="container-show">
+
+    <div class="container-left">
+      <div class="show-title">
+        <%= @toy.name %></h1>
+      </div>
+      <div class="container-left-image">
+        <% if @toy.photo.attached? %>
+        <%= cl_image_tag @toy.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="container-right">
+      <div class="container-right-detail">
+        <h2>Description</h2>
+        <p><%= @toy.description %></p>
+      </div>
+
+      <div class="container-right-detail">
+        <h2>Unit price</h2>
+        <p><%= @toy.unit_price %> €</p>
+      </div>
+
+      <div class="container-right-detail">
+        <h2>Category</h2>
+        <p><%= @toy.category %></p>
+      </div>
+      <div class="container-right-links">
+        <%= simple_form_for [@rent], url: toy_rents_path do |f| %>
+          <%= f.input :duration, label: "Nombre de jours de location" %>
+          <%= f.submit "Louer", class: 'btn btn-primary btn-rent' %>
+          <%= link_to "Annuler", toy_path(@toy), class: "delete-link" %>
+        <% end %>
+      </div>
+    </div>
+    </div>
+    
+  </div>
 </div>
