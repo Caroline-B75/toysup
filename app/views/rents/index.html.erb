@@ -1,5 +1,7 @@
 <div class="rent-container">
   <h1>Mes locations</h1>
+    <%= link_to "Louer un autre jouet", root_path, class: 'btn btn-all-rents' %>
+    <br>
   <div class="rent-cards-inline">
     <% @rents.each do |rent|  %>
       <div class="rent-card">
@@ -26,4 +28,3 @@
     <% end %>
   </div>
 </div>
-
