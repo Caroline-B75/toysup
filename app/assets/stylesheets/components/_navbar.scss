@@ -40,10 +40,26 @@
 }
 
 .btn-profile {
-  border-radius: 50px;
+  border-radius: 50%;
   font-size: 25px;
   padding: 5px 15px;
   background: #1fa995;
+  border: 0px;
   color: white;
   font-family: Pacifico;
+}
+
+.btn-add-toy {
+  background: white;
+  margin-right: 10px;
+  border: solid #21aa94 1px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #21aa94;
+  &:hover {
+    background: #21aa94;
+    text-decoration: none;
+    color: white;
+    opacity: 0.6;
+  }
 }
