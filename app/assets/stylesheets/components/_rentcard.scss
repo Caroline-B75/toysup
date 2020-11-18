@@ -33,6 +33,7 @@
   p {
     padding-left: 20px;
     margin-bottom: 10px;
+    font-size: 20px;
   }
 }
 
@@ -65,11 +66,16 @@
 }
 
 .btn-cancel-rent {
-  width: 100%;
+  width: 70%;
   padding: 4px;
-  margin: 0px;
+  margin-top: 20px;
+  height: 30px;
   background: #50205d;
+  opacity: 60%;
   text-align: center;
+  line-height: 20px;
+  font-family: Pacifico;
+  font-size: 15px;
   color: white;
   border-radius: 5px;
   &:hover {
@@ -122,8 +128,10 @@
   margin-bottom: 10px;
   background-color: #1EA896;
   border: #1EA896;
-  width: 500px;
+  width: 400px;
+  height: 45px;
   font-size: 18px;
+  line-height: 40px;
   text-align: center;
   color: white;
   border-radius: 5px;
