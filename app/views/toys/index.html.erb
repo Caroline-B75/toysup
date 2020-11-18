@@ -6,10 +6,17 @@
     <div class="toycontainer">
       <% @toys.each do |toy| %>
         <div class="toycard" href="<% toy_path(toy) %>">
-          <li class="toyname"> <%= toy.name %></li>
-          <li class="toyphoto"><%= cl_image_tag(toy.photo.key, height: 200, width: 170, crop: "fill") %><hr></li>
-          <li class="toy-info toy-cat"> <%= toy.category %></li>
-          <li class="toy-info toy-price"> <%= toy.unit_price %> €</li>
+            <li class="toyname"> <%= toy.name %></li>
+            <li class="toyphoto"><%= cl_image_tag(toy.photo.key, height: 200, width: 170, crop: "fill") %><hr></li>
+            <div class="toy-details">
+              <div class="toy-info">
+                <li class="toy-info toy-cat"> <%= toy.category %></li>
+                <li class="toy-info toy-price"> <%= toy.unit_price %> €</li>
+              </div>
+              <div class="toy-link-show">
+                <%= link_to "Détails", toy_path(toy), class: "btn btn-primary btn-index-show" %>
+              </div>
+            </div>
         </div>
       <% end %>
     </div>
