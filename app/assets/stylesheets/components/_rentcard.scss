@@ -1,0 +1,114 @@
+.rent-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 25px 10px;
+  min-height: 557px;
+  h1{
+    margin-bottom: 20px;
+  }
+}
+
+.rent-card,
+.rent-recap-card {
+  flex-direction: column;
+  background-color: white;
+  box-shadow: 5px 5px 5px lightgrey;
+  display: flex;
+  border-radius: 15px;
+  margin: 10px;
+  align-items: center;
+}
+.rent-recap-card {
+  width: 700px;
+  h4 {
+    font-size: 24px;
+    color: #50205d;
+    font-family: Pacifico;
+  }
+  h5 {
+    font-size: 22px;
+    color: #9e3bb7;
+  }
+  p {
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.rent-card {
+  width: 500px;
+    h5 {
+    font-size: 18px;
+    color: #9e3bb7;
+  }
+  p {
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+.rent-info,
+.rent-recap-info {
+  flex-grow: 1;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rent-photo {
+  border-left: solid lightgray 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-cancel-rent {
+  width: 100%;
+  padding: 4px;
+  margin: 0px;
+  background: #9e3bb7;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+}
+
+.rent-toy-name,
+.rent-status {
+  background: white;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-bottom: solid #d3d3d3 1px;
+  border-radius: 15px 15px 0px 0px;
+  p {
+    color: #50205d;
+    font-family: Pacifico;
+    margin: 0px;
+  }
+}
+
+.rent-status {
+  p {
+    font-size: 24px;
+  }
+}
+
+.rent-toy-name {
+  p {
+    font-size: 28px;
+  }
+}
+
+.rent-cards-inline {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.rent-content {
+  display: flex;
+  width: 100%;
+}
