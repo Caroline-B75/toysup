@@ -68,10 +68,15 @@
   width: 100%;
   padding: 4px;
   margin: 0px;
-  background: #9e3bb7;
+  background: #50205d;
   text-align: center;
   color: white;
   border-radius: 5px;
+  &:hover {
+    background: #9e3bb7;
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .rent-toy-name,
@@ -111,4 +116,22 @@
 .rent-content {
   display: flex;
   width: 100%;
+}
+
+.btn-all-rents {
+  margin-bottom: 10px;
+  background-color: #1EA896;
+  border: #1EA896;
+  width: 500px;
+  font-size: 18px;
+  text-align: center;
+  color: white;
+  border-radius: 5px;
+  padding: 2px;
+  margin-top: 10px;
+  &:hover {
+    background: #148879;
+    text-decoration: none;
+    color: white;
+  }
 }
