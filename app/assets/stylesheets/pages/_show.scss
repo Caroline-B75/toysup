@@ -1,21 +1,26 @@
-.container {
-  height: 90vh;
-}
 
 .container-show {
-  width: 100%;
   background-color: white;
   border-radius: 10px;
   margin: 40px auto;
   padding: 30px;
-  display: flex;
+  box-shadow: 5px 5px 5px lightgrey;
+  border-radius: 15px;
+}
+
+@include media-breakpoint-up(md) {
+  .container-show {
+    display: flex;
+  }
+
 }
 
 .container-left {
   margin: 15px 40px;
+  min-width: 400px;
   .show-title {
     font-family: Pacifico;
-    font-size: 50px;
+    font-size: 40px;
     color: #43194d;
   }
   h2 {
@@ -27,16 +32,24 @@
 
 .container-left-image {
   margin-top: 25px;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
 }
+
 .container-right {
   display: flex;
   flex-direction: column;
   margin: 15px 40px;
   font-family: Merriweather;
+  border-left: 4mm grey;
     h2 {
       color: #1EA896;
+      font-family: Pacifico;
     }
     p {
+    margin-top: 3px;
     font-size: 20px;
   }
 
@@ -48,11 +61,13 @@
 
 .container-right-links {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   padding: 15px;
     .delete-link {
       text-decoration: none;
-      color: #9e3ab7;
+      color: #43194d;
+      font-size: 18px;
+      margin-top: 12px;
     }
 }
 
@@ -60,6 +75,9 @@
   margin-bottom: 10px;
   background-color: #1EA896;
   border: #1EA896;
+  width: 180px;
+  height: 40px;
+  font-size: 20px;
 }
 
 .btn-rent:hover {
