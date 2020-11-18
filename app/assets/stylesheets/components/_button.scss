@@ -1,5 +1,21 @@
-.btn {
-  border-radius: 10px;
+@media (max-width: 2500px) {
+  .btn {
+    border-radius: 10px;
+    margin: 5px 5px 5px 15px;
+    font-family: Pacifico;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 350px) {
+  .btn {
+    border-radius: 10px;
+    margin: 5px;
+    font-family: Pacifico;
+    font-size: 10px;
+    text-align: center;
+  }
 }
 
 .btn-index-show {
