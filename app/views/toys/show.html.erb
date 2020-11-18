@@ -20,17 +20,17 @@
       </div>
 
       <div class="container-right-detail">
-        <h2>Unit price</h2>
+        <h2>Prix par jour</h2>
         <p><%= @toy.unit_price %> €</p>
       </div>
 
       <div class="container-right-detail">
-        <h2>Category</h2>
+        <h2>Catégorie</h2>
         <p><%= @toy.category %></p>
       </div>
       <div class="container-right-links">
-        <%= link_to "Louer", new_toy_rent_path(@toy), class: "btn btn-primary btn-rent" %>
-        <%= link_to "Supprimer", toy_path(@toy), method: :delete, data: { confirm: "Êtes-vous sûr ?" }, class: "delete-link" %>
+        <%= link_to "Louer", new_toy_rent_path(@toy), class: "btn-rent" %>
+        <%= link_to "Retour", toys_path, class: "back-link"%>
       </div>
     </div>
     </div>
