@@ -5,10 +5,12 @@
   <ul>
     <div class="toycontainer">
       <% @toys.each do |toy| %>
-        <div class="toycard" href="<% toy_path(toy) %>">
+        <div class="toycard d-flex flex-column" href="<% toy_path(toy) %>">
+          <div class="toycard-main flex-grow-1">
             <li class="toyname"> <%= toy.name %></li>
-            <li class="toyphoto"><%= cl_image_tag(toy.photo.key, height: 200, width: 170, crop: "fill") %><hr></li>
-            <div class="toy-details">
+            <li class="toyphoto"><%= cl_image_tag(toy.photo.key, height: 200, width: 170, crop: "fill") %></li>
+          </div>
+            <div class="toy-details border-top pt-2">
               <div class="toy-info">
                 <li class="toy-info toy-cat"> <%= toy.category %></li>
                 <li class="toy-info toy-price"> <%= toy.unit_price %> €</li>

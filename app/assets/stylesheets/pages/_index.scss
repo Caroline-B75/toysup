@@ -5,7 +5,7 @@
 
 .indexheader {
   position: relative;
-  top: 50px;
+  padding: 40px 0;
 }
 
 h1 {
@@ -16,6 +16,6 @@ h1 {
 }
 
 .main {
-  min-height: calc(100vh - 181px)
+  min-height: calc(100vh - 180px)
 }
 
