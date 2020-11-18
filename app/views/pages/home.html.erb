@@ -6,14 +6,20 @@
     </div>
 
 <!-- Search form  -->
-    <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-      <div class="search-form-control form-group">
-        <input class="form-control string required" type="text" name="search[query]" id="search_query" value="">
-        <button name="button" type="submit" class="btn btn-flat">
-          <i class="fas fa-search"></i>
-        </button>
+
+    <div>
+      <div class="d-flex justify-content-center div-search">
+        <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+          <div class="form-inline">
+            <input class="form-control" type="text" name="search[query]" id="search_query" value="">
+            <button name="button" type="submit" class="btn btn-success">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+      <%= link_to "TOUT", toys_path, class:"btn btn-success mr-2 ml-1" %>
+    </div>
 
 <!-- category cards -->
     <div class="categorymenu">
@@ -32,3 +38,17 @@
     </div>
 
 </div>
+
+
+<!-- <div class="d-flex justify-content-center">
+      <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+        <div class="search-form-control form-group">
+          <input class="form-control string required" type="text" name="search[query]" id="search_query" value="">
+          <button name="button" type="submit" class="btn btn-flat">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      <% end %>
+      <%= link_to "TOUT", toys_path %>
+    </div>
+ -->
