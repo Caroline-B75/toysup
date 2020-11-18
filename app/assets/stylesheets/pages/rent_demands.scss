@@ -1,0 +1,124 @@
+.demands-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+    h1{
+    margin-bottom: 20px;
+  }
+  h2 {
+    margin-top: 30px;
+    color: #9e3bb7;
+    font-family: 'Pacifico';
+    margin-bottom: 15px;
+  }
+  h3 {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  h4 {
+    font-size: 15px;
+    color: #9e3bb7;
+    margin: 0px;
+    font-style: italic;
+  }
+  h5 {
+    font-size: 15px;
+  }
+  p {
+    padding-left: 20px;
+    margin-bottom: 10px;
+  }
+  em {
+    font-style: normal;
+    color: #9e3bb7;
+  }
+}
+
+.demand-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.demand-card-validated,
+.demand-card-refused,
+.demand-card {
+  flex-direction: column;
+  box-shadow: 5px 5px 5px lightgrey;
+  display: flex;
+  border-radius: 15px;
+  margin: 10px;
+  width: 350px;
+  align-items: center;
+}
+
+.demand-card {
+  background-color: white;
+}
+
+.demand-card-refused {
+  background-color: #fcaaa7;
+  opacity: 0.6;
+}
+
+.demand-card-validated{
+  background-color: #97d0a3b8;
+  opacity: 0.5;
+}
+
+.demand-name {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-bottom: solid #d3d3d3 1px;
+  border-radius: 15px 15px 0px 0px;
+  p {
+    color: #50205d;
+    font-size: 28px;
+    font-family: Pacifico;
+    margin: 0px;
+  }
+}
+
+.demand-by-user {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-top: solid #d3d3d3 1px;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.demand-info {
+  padding: 15px;
+}
+
+.demand-footer {
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  border-top: solid #d3d3d3 1px;
+  border-radius: 0px 0px 15px 15px;
+}
+
+.btn-rentee-confirm,
+.btn-rentee-refuse {
+  background: #50205d;
+  color: white;
+  width: 145px;
+  &:hover {
+    background: #9e3bb7;
+    text-decoration: none;
+    color: white;
+  }
+}
+
+.btn-rentee-confirm {
+  margin-left: 5px;
+}
+
+.demand-cards-inline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: max-content;
+}

@@ -1,0 +1,84 @@
+<div class="demands-container">
+  <h1>Mes demandes de location</h1>
+  <div class="demand-container">
+
+    <h2>Demandes en attente</h2>
+    <% if @new_rents.empty? %>
+      <h3>Aucune demande en attente</h3>
+    <% else %>
+      <div class="demand-cards-inline">
+        <% @new_rents.each do |rent|  %>
+          <div class="demand-card">
+            <div class="demand-name">
+              <p>Pour le jouet <%= Toy.find(rent.toy_id).name %></p>
+            </div>
+            <div class="demand-content">
+              <div class="demand-photo">
+                <%= cl_image_tag Toy.find(rent.toy_id).photo.key, width: 350, height: 170, crop: :fill %>
+              </div>
+              <div class="demand-info">
+                <h5><em>Durée : </em><%= rent.duration %> jours</h5>
+                <h5><em>Montant : </em><%= rent.duration %>€</h5>
+                <h5><em>Statut : </em><%= rent.status %></h5>
+              </div>
+            </div>
+            <div class="demand-by-user">
+              <h4>Demande effectuée par <%= User.find(rent.user_id).name %></h4>
+            </div>
+            <div class="demand-footer">
+              <%= link_to "Confirmer", accept_rent_path(rent), method: :patch, data: { confirm: "Êtes-vous sûr ?" }, class: 'btn btn-rentee-confirm' %>
+              <%= link_to "Refuser", refuse_rent_path(rent), method: :patch, data: { confirm: "Êtes-vous sûr ?" }, class: 'btn btn-rentee-refuse' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+    <h2>Demandes acceptées</h2>
+    <div class="demand-cards-inline">
+      <% @validated_rents.each do |rent|  %>
+        <div class="demand-card-validated">
+          <div class="demand-name">
+            <p>Pour le jouet <%= Toy.find(rent.toy_id).name %></p>
+          </div>
+          <div class="demand-content">
+            <div class="demand-photo">
+              <%= cl_image_tag Toy.find(rent.toy_id).photo.key, width: 350, height: 170, crop: :fill %>
+            </div>
+            <div class="demand-info">
+              <h5><em>Durée : </em><%= rent.duration %> jours</h5>
+              <h5><em>Montant : </em><%= rent.duration %>€</h5>
+              <h5><em>Statut : </em><%= rent.status %></h5>
+            </div>
+          </div>
+          <div class="demand-by-user">
+            <h3>Demande effectuée par <%= User.find(rent.user_id).name %></h3>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <h2>Demandes refusées</h2>
+    <div class="demand-cards-inline">
+      <% @refused_rents.each do |rent|  %>
+        <div class="demand-card-refused">
+          <div class="demand-name">
+            <p>Pour le jouet <%= Toy.find(rent.toy_id).name %></p>
+          </div>
+          <div class="demand-content">
+            <div class="demand-photo">
+              <%= cl_image_tag Toy.find(rent.toy_id).photo.key, width: 350, height: 170, crop: :fill %>
+            </div>
+            <div class="demand-info">
+              <h5><em>Durée : </em><%= rent.duration %> jours</h5>
+              <h5><em>Montant : </em><%= rent.duration %>€</h5>
+              <h5><em>Statut : </em><%= rent.status %></h5>
+            </div>
+          </div>
+          <div class="demand-by-user">
+            <h3>Demande effectuée par <%= User.find(rent.user_id).name %></h3>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

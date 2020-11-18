@@ -1,0 +1,29 @@
+<div class="my-toys-container">
+  <h1>Mes jouets en location</h1>
+  <div class="my-toy-container">
+    <% @toys.each do |toy|  %>
+      <div class="my-toy-card">
+        <div class="my-toy-name">
+          <p>Les infos sur <%= toy.name %></p>
+        </div>
+        <div class="my-toy-content">
+          <div class="my-toy-photo">
+            <%= cl_image_tag toy.photo.key, width: 200, height: 270, crop: :fill %>
+          </div>
+          <div class="my-toy-info">
+            <h5>Description :</h5>
+            <p><%= toy.description %></p>
+            <h5>Prix de la location à la journée :</h5>
+            <p><%= toy.unit_price %>€</p>
+            <h5>Catégorie :</h5>
+            <p><%= toy.category %></p>
+          </div>
+        </div>
+        <div class="my-toy-footer">
+          <%= link_to "Supprimer", toy_path(toy), method: :delete, data: { confirm: "Êtes-vous sûr ?" }, class: "btn btn-primary btn-index-show" %>
+          <%= link_to "Modifier", edit_toy_path(toy), class: "btn btn-primary btn-index-show" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

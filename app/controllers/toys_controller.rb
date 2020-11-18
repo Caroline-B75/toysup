@@ -7,6 +7,11 @@ class ToysController < ApplicationController
     @toy = Toy.find(params[:id])
   end
 
+  def show_user_toy
+    user_id = current_user.id
+    @toys = Toy.where(user_id: user_id)
+  end
+
   def new
     @toy = Toy.new
   end
@@ -16,7 +21,7 @@ class ToysController < ApplicationController
     @toy.user = current_user
     @toy.save
     if @toy.save
-      redirect_to toy_path(@toy)
+      redirect_to user_toys_path
     else
       render :new
     end
@@ -32,12 +37,11 @@ class ToysController < ApplicationController
     @toy = Toy.find(params[:id])
   end
 
-
   def update
     @toy = Toy.find(params[:id])
     @toy.update(toy_params)
 
-    redirect_to toy_path(@toy)
+    redirect_to user_toys_path
   end
 
   private
