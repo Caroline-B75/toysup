@@ -1,15 +1,17 @@
-<div class="indexheader">
-<h1>Clic sur le jouet qui te ferait plaisir</h1>
-</div>
-<ul>
-  <div class="toycontainer">
-    <% @toys.each do |toy| %>
-      <div class="toycard" href="<% toy_path(toy) %>">
-        <li class="toyname"> <%= toy.name %></li>
-        <li class="toyphoto"><%= cl_image_tag(toy.photo.key, height: 200, width: 170, crop: "fill") %><hr></li>
-        <li class="toy-info toy-cat"> <%= toy.category %></li>
-        <li class="toy-info toy-price"> <%= toy.unit_price %> €</li>
-      </div>
-    <% end %>
+<div class="mb-5">
+  <div class="indexheader">
+  <h1>Clic sur le jouet qui te ferait plaisir</h1>
   </div>
-</ul>
+  <ul>
+    <div class="toycontainer">
+      <% @toys.each do |toy| %>
+        <div class="toycard" href="<% toy_path(toy) %>">
+          <li class="toyname"> <%= toy.name %></li>
+          <li class="toyphoto"><%= cl_image_tag(toy.photo.key, height: 200, width: 170, crop: "fill") %><hr></li>
+          <li class="toy-info toy-cat"> <%= toy.category %></li>
+          <li class="toy-info toy-price"> <%= toy.unit_price %> €</li>
+        </div>
+      <% end %>
+    </div>
+  </ul>
+</div>
