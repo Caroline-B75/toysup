@@ -30,6 +30,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
+              <% if current_user %>
               <button class="btn-profile" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <%= current_user.name.first %>
               </button>
@@ -40,8 +41,9 @@
                 <hr>
                 <%= link_to "Mes demandes", user_rent_demands_path, class: "dropdown-item" %>
                 <hr>
-                <%= link_to "Me déconnecter", "#", class: "dropdown-item" %>
+                <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
+              <% end %>
             </li>
           </ul>
         </div>
