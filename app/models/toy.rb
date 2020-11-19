@@ -6,6 +6,7 @@ class Toy < ApplicationRecord
   validates :unit_price, numericality: true
   validates_inclusion_of :category, in: CATEGORY
   has_one_attached :photo
+  has_many :reviews, dependent: :destroy
 
   include PgSearch::Model
   pg_search_scope :search_by_name_and_description_and_category,
@@ -13,5 +14,4 @@ class Toy < ApplicationRecord
     using: {
     tsearch: { prefix: true }
   }
-
 end

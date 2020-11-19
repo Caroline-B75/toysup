@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # get 'toys/category1', to: 'toys#show_0_2_ans', as: :category_1
   resources :toys do
     resources :rents, only: [:new, :create]
+    resources :reviews, only: [ :new, :create ]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :rents, only: [:index, :show, :delete, :edit, :update, :destroy]

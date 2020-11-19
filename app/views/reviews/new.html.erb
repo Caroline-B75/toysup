@@ -1,0 +1,35 @@
+<div class="container">
+
+  <div class="container-show">
+
+    <div class="container-left">
+      <div class="show-title">
+        <%= @toy.name %></h1>
+      </div>
+      <div class="container-left-image">
+        <% if @toy.photo.attached? %>
+        <%= cl_image_tag @toy.photo.key, height: 300, width: 400, crop: :fill %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="container-right">
+      
+      <%= simple_form_for [ @toy, @review ] do |f| %>
+        <h2 class="pb-4">Je donne mon avis</h2>
+        <%= f.input :content, label: "Votre commentaire" %>
+        <%= f.input :quality_rating, collection: (1..5).to_a, label: "Qualité du jouet" %>
+        <%= f.input :security_rating, collection: (1..5).to_a, label: "Sécurité et hygiène" %>
+        <%= f.input :fun_rating, collection: (1..5).to_a, label: "Attrait pour votre enfant" %>
+        <%= f.submit "Poster mon avis", class: "btn btn-success" %>
+      <% end %>
+
+      <div class="container-right-links">
+        <%= link_to "Retour", toy_path(@toy), class: "back-link"%>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+

@@ -12,6 +12,12 @@ class ToysController < ApplicationController
 
   def show
     @toy = Toy.find(params[:id])
+    @reviews = @toy.reviews
+    @average_quality_rating = @reviews.average(:quality_rating)
+    @average_security_rating = @reviews.average(:security_rating)
+    @average_fun_rating = @reviews.average(:fun_rating)
+    @sum = (@average_quality_rating + @average_quality_rating + @average_fun_rating)
+    @average_rating = @sum / 3
   end
 
   def show_user_toy
@@ -21,6 +27,7 @@ class ToysController < ApplicationController
 
   def new
     @toy = Toy.new
+    @reviews = @toy.reviews
   end
 
   def create
