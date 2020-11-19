@@ -1,30 +1,82 @@
 <div class="rent-container">
   <h1>Mes locations</h1>
     <%= link_to "Louer un autre jouet", toys_path, class: 'btn btn-all-rents' %>
-    <br>
-  <div class="rent-cards-inline">
-    <% @rents.each do |rent|  %>
-      <div class="rent-card">
-        <div class="rent-status">
-          <p><%= rent.status %></p>
+  <h2>Locations en attente de confirmation</h2>
+  <div class="flex">
+    <% @new_rents.each do |rent|  %>
+      <div class="item flex-item">
+        <div class="rent-card">
+          <div class="rent-content">
+            <div class="rent-info">
+              <h5>Jouet :</h5>
+              <p><%= Toy.find(rent.toy_id).name %></p>
+              <h5>Loué par :</h5>
+              <p><%= User.find(Toy.find(rent.toy_id).user_id).name %></p>
+              <h5>Durée de la location :</h5>
+              <p><%= rent.duration %> jours</p>
+              <h5>Prix total de la location :</h5>
+              <p><%= rent.price %>€</p>
+            </div>
+            <div class="rent-photo">
+              <%= cl_image_tag Toy.find(rent.toy_id).photo.key, width: 200, height: 300, crop: :fill %>
+            </div>
+          </div>
+          <%= link_to "Annuler ma location", rent_path(rent), method: :delete, data: { confirm: "Êtes-vous sûr ?" }, class: 'btn-cancel-rent' %>
         </div>
-        <div class="rent-content">
-          <div class="rent-info">
-            <h5>Jouet :</h5>
-            <p><%= Toy.find(rent.toy_id).name %></p>
-            <h5>Loué par :</h5>
-            <p><%= User.find(Toy.find(rent.toy_id).user_id).name %></p>
-            <h5>Durée de la location :</h5>
-            <p><%= rent.duration %> jours</p>
-            <h5>Prix total de la location :</h5>
-            <p><%= rent.price %>€</p>
-            <%= link_to "Annuler ma location", rent_path(rent), method: :delete, data: { confirm: "Êtes-vous sûr ?" }, class: 'btn-cancel-rent' %>
+      </div>
+    <% end %>
+  </div>
+  <h2>Locations confirmées</h2>
+  <div class="flex">
+    <% @validated_rents.each do |rent|  %>
+      <div class="item flex-item">
+        <div class="rent-card-validated">
+          <div class="rent-content">
+            <div class="rent-info">
+              <h5>Jouet :</h5>
+              <p><%= Toy.find(rent.toy_id).name %></p>
+              <h5>Loué par :</h5>
+              <p><%= User.find(Toy.find(rent.toy_id).user_id).name %></p>
+              <h5>Durée de la location :</h5>
+              <p><%= rent.duration %> jours</p>
+              <h5>Prix total de la location :</h5>
+              <p><%= rent.price %>€</p>
+            </div>
+            <div class="rent-photo">
+              <%= cl_image_tag Toy.find(rent.toy_id).photo.key, width: 200, height: 300, crop: :fill %>
+            </div>
           </div>
-          <div class="rent-photo">
-            <%= cl_image_tag Toy.find(rent.toy_id).photo.key, width: 200, height: 300, crop: :fill %>
+          <%= link_to "Retirer de ma liste", rent_path(rent), method: :delete, class: 'btn-cancel-rent' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <h2>Locations refusées</h2>
+  <div class="flex">
+    <% @refused_rents.each do |rent|  %>
+      <div class="item flex-item">
+        <div class="rent-card-refused">
+          <div class="rent-content">
+            <div class="rent-info">
+              <h5>Jouet :</h5>
+              <p><%= Toy.find(rent.toy_id).name %></p>
+              <h5>Loué par :</h5>
+              <p><%= User.find(Toy.find(rent.toy_id).user_id).name %></p>
+              <h5>Durée de la location :</h5>
+              <p><%= rent.duration %> jours</p>
+              <h5>Prix total de la location :</h5>
+              <p><%= rent.price %>€</p>
+            </div>
+            <div class="rent-photo">
+              <%= cl_image_tag Toy.find(rent.toy_id).photo.key, width: 200, height: 300, crop: :fill %>
+            </div>
           </div>
+          <%= link_to "Retirer de ma liste", rent_path(rent), method: :delete, class: 'btn-cancel-rent' %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+
+
+
