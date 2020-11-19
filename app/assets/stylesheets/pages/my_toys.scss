@@ -30,9 +30,16 @@
   box-shadow: 5px 5px 5px lightgrey;
   display: flex;
   border-radius: 15px;
-  margin: 10px;
-  width: 900px;
+  margin: 15px;
+  width: 350px;
   align-items: center;
+}
+
+.my-toy-photo {
+  width: 100%;
+  align-items: center;
+  object-fit: cover;
+  height: 200px;
 }
 
 .my-toy-name {
