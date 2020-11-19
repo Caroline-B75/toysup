@@ -9,6 +9,18 @@ class RentsController < ApplicationController
     @toy_user = User.find(@toy.user_id)
   end
 
+  def show_user_rent_demands
+    @new_rents = Rent.select('rents.*').joins(:toy).group('rents.id')
+                     .where(toys: { user_id: current_user.id })
+                     .where(rents: { status: "en attente de confirmation" })
+    @refused_rents = Rent.select('rents.*').joins(:toy).group('rents.id')
+                         .where(toys: { user_id: current_user.id })
+                         .where(rents: { status: "refusée" })
+    @validated_rents = Rent.select('rents.*').joins(:toy).group('rents.id')
+                           .where(toys: { user_id: current_user.id })
+                           .where(rents: { status: "validée" })
+  end
+
   def new
     @rent = Rent.new
     @toy = Toy.find(params[:toy_id])
@@ -42,6 +54,18 @@ class RentsController < ApplicationController
     @rent = Rent.find(params[:id])
     @rent.delete
     redirect_to rents_path(@rent)
+  end
+
+  def validate_rent
+    @rent = Rent.find(params[:id])
+    @rent.update(status: "validée")
+    redirect_to user_rent_demands_path
+  end
+
+  def refuse_rent
+    @rent = Rent.find(params[:id])
+    @rent.update(status: "refusée")
+    redirect_to user_rent_demands_path
   end
 
   private

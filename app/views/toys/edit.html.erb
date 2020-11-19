@@ -1,7 +1,29 @@
-<%= simple_form_for(@toy) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.select :category, Toy::CATEGORY %>
-  <%= f.input :unit_price %>
-  <%= f.submit %>
-<% end %>
+<div class="my-toys-container">
+  <div class="my-toy-container">
+    <%= simple_form_for(@toy) do |f| %>
+      <div class="my-toy-card">
+        <div class="my-toy-name">
+          <%= f.input :name %>
+        </div>
+        <div class="my-toy-content">
+          <div class="my-toy-photo">
+            <%= cl_image_tag @toy.photo.key, width: 300, height: 350, crop: :fill %>
+          </div>
+          <div class="my-toy-info">
+            <h5>Photo :</h5>
+            <%= f.input :photo, label:"Je rajoute une photo", as: :file, label: false%>
+            <h5>Description :</h5>
+            <%= f.input :description, label: false %>
+            <h5>Prix de la location à la journée :</h5>
+            <%= f.input :unit_price, label: false %>
+            <h5>Catégorie :</h5>
+            <%= f.select :category, Toy::CATEGORY, label: false %>
+          </div>
+        </div>
+        <div class="my-toy-footer">
+          <%= f.submit "Mettre mon jouet à jour", class: "btn btn-success" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
