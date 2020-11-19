@@ -28,15 +28,25 @@
         <h2>Category</h2>
         <p><%= @toy.category %></p>
       </div>
+
+<!--       calendar -->
       <div class="container-right-links">
-        <%= simple_form_for [@rent], url: toy_rents_path do |f| %>
-          <%= f.input :duration, label: "Nombre de jours de location" %>
-          <%= f.submit "Louer", class: 'btn btn-primary btn-rent' %>
-          <%= link_to "Annuler", toy_path(@toy), class: "delete-link" %>
-        <% end %>
+
+        <div class="container p-0">
+          <div class="form-wrapper">
+            <h2>Louer un jouet</h2>
+            <%= simple_form_for [@toy, @rent] do |f| %>
+              <%= f.input  :start_date, as: :string, required: false, label: false, input_html: {id: "range_start", class: "datepicker d-none"} %>
+              <%= f.input  :end_date,   as: :string, required: false, label: false, input_html: {id: "range_end", class: "datepicker d-none" } %>
+              <%= f.button :submit, "Louer", class: "btn btn-success louer" %>
+            <% end %>
+          </div>
+        </div>
       </div>
+      <div id="booking-form-div" data-bookings="<%= @rental_dates.to_json %>" ></div>
+
     </div>
     </div>
-    
+
   </div>
 </div>
