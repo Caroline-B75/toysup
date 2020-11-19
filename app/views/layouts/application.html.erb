@@ -7,22 +7,19 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
+    <%= render 'shared/flashes' %>
 
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <div>
         <%= link_to (image_tag("logo_2.png")), root_path, class: "navbar-brand" %>
       </div>
 
-      <div>
+      <div class="toysup">
         <h3>toySup</h3>
       </div>
 
@@ -31,16 +28,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item dropdown">
+              <% if current_user %>
               <button class="btn-profile" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                <%= current_user.name.first %>
               </button>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <%= link_to "Mon profil", "#", class: "dropdown-item" %>
+                <%= link_to "Mes jouets", user_toys_path, class: "dropdown-item" %>
                 <hr>
                 <%= link_to "Mes locations", rents_path, class: "dropdown-item" %>
                 <hr>
-                <%= link_to "Me déconnecter", "#", class: "dropdown-item" %>
+                <%= link_to "Mes demandes", user_rent_demands_path, class: "dropdown-item" %>
+                <hr>
+                <%= link_to "Me déconnecter", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
               </div>
+              <% end %>
             </li>
           </ul>
         </div>
@@ -62,6 +63,11 @@
         This playground is made with <i class="fas fa-heart"></i> at toySup
       </div>
     </div>
-
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- Popper.js (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap JavaScript library-->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>

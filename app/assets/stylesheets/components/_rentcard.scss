@@ -5,20 +5,49 @@
   margin: 25px 10px;
   min-height: 557px;
   h1{
-    margin-bottom: 20px;
+    margin: 10px;
+  }
+  h2 {
+  font-family: 'Pacifico';
+  font-size: 30px;
+  color: #50205d;
+  margin: 30px;
   }
 }
 
+.rent-card-refused,
+.rent-card-validated,
 .rent-card,
 .rent-recap-card {
   flex-direction: column;
-  background-color: white;
   box-shadow: 5px 5px 5px lightgrey;
   display: flex;
   border-radius: 15px;
   margin: 10px;
   align-items: center;
 }
+
+.rent-recap-card,
+.rent-card {
+  background-color: white;
+}
+
+.rent-card-refused {
+  background-color: #fcaaa7;
+  opacity: 0.6;
+  .btn-cancel-rent {
+    opacity: 1;
+  }
+}
+
+.rent-card-validated {
+  background-color: #97d0a3b8;
+  opacity: 0.5;
+  .btn-cancel-rent {
+    opacity: 1;
+  }
+}
+
 .rent-recap-card {
   width: 700px;
   h4 {
@@ -33,9 +62,12 @@
   p {
     padding-left: 20px;
     margin-bottom: 10px;
+    font-size: 20px;
   }
 }
 
+.rent-card-refused,
+.rent-card-validated,
 .rent-card {
   width: 500px;
     h5 {
@@ -58,18 +90,23 @@
 }
 
 .rent-photo {
-  border-left: solid lightgray 1px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 10px;
 }
 
 .btn-cancel-rent {
-  width: 100%;
+  width: 95%;
   padding: 4px;
-  margin: 0px;
+  margin: 15px;
+  height: 30px;
   background: #50205d;
+  opacity: 60%;
   text-align: center;
+  line-height: 20px;
+  font-family: Pacifico;
+  font-size: 15px;
   color: white;
   border-radius: 5px;
   &:hover {
@@ -81,12 +118,9 @@
 
 .rent-toy-name,
 .rent-status {
-  background: white;
   width: 100%;
   text-align: center;
   padding: 10px;
-  border-bottom: solid #d3d3d3 1px;
-  border-radius: 15px 15px 0px 0px;
   p {
     color: #50205d;
     font-family: Pacifico;
@@ -101,6 +135,8 @@
 }
 
 .rent-toy-name {
+  border-bottom: solid #d3d3d3 1px;
+  border-radius: 15px 15px 0px 0px;
   p {
     font-size: 28px;
   }
@@ -122,8 +158,10 @@
   margin-bottom: 10px;
   background-color: #1EA896;
   border: #1EA896;
-  width: 500px;
+  width: 400px;
+  height: 45px;
   font-size: 18px;
+  line-height: 40px;
   text-align: center;
   color: white;
   border-radius: 5px;
@@ -134,4 +172,12 @@
     text-decoration: none;
     color: white;
   }
+}
+
+a.btn.btn-all-rents {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 195px;
+    z-index: 10;
 }

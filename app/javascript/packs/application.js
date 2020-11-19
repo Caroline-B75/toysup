@@ -24,11 +24,25 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import {initFlatpickr} from "../plugins/flatpickr.js"
 
 // Internal imports, e.g:
 import { initStarRating } from '../plugins/init_star_rating';
 
 document.addEventListener('turbolinks:load', () => {
-  // Call your functions here, e.g:
   initStarRating();
 });
+
+document.addEventListener('turbolinks:load', () => {
+  initFlatpickr();
+});
+
+window.addEventListener('scroll',function() {
+    //When scroll change, you save it on localStorage.
+    localStorage.setItem('scrollPosition',window.scrollY);
+},false);
+
+window.addEventListener('load',function() {
+    if(localStorage.getItem('scrollPosition') !== null)
+       window.scrollTo(0, localStorage.getItem('scrollPosition'));
+},false);

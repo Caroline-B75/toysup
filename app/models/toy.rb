@@ -7,4 +7,11 @@ class Toy < ApplicationRecord
   validates_inclusion_of :category, in: CATEGORY
   has_one_attached :photo
   has_many :reviews, dependent: :destroy
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_description_and_category,
+    against: [ :name, :description, :category ],
+    using: {
+    tsearch: { prefix: true }
+  }
 end

@@ -2,6 +2,41 @@
   <div class="indexheader">
   <h1>Clic sur le jouet qui te ferait plaisir</h1>
   </div>
+
+<!-- Search form  -->
+
+    <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center div-search">
+        <%= simple_form_for :search, url: toys_path, method: :get do |f| %>
+          <div class="form-inline">
+            <input class="form-control" type="text" name="search[query]" id="search_query" value="">
+            <button name="button" type="submit" class="btn btn-success">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        <% end %>
+      </div>
+      <%= link_to "Voir tous les jouets", toys_path, class:"btn btn-success" %>
+    </div>
+
+<!-- category cards -->
+    <div class="categorymenu">
+      <div class="col-sm-4 col-lg-2 categorycards">
+        <%= link_to "0 - 2 ans", toys_path(:category =>"0-2 ans") %>
+      </div>
+      <div class="col-sm-4 col-lg-2 categorycards">
+        <%= link_to "2 - 4 ans", toys_path(:category => "2-4 ans") %>
+      </div>
+      <div class="col-sm-4 col-lg-2 categorycards">
+        <%= link_to "5 - 7 ans", toys_path(:category => "5-7 ans") %>
+      </div>
+      <div class="col-sm-4 col-lg-2 categorycards">
+        <%= link_to "8 - 12 ans", toys_path(:category => "8-12 ans") %>
+      </div>
+    </div>
+
+
+<!-- toy index -->
   <ul>
     <div class="toycontainer">
       <% @toys.each do |toy| %>
@@ -13,7 +48,7 @@
             <div class="toy-details border-top pt-2">
               <div class="toy-info">
                 <li class="toy-info toy-cat"> <%= toy.category %></li>
-                <li class="toy-info toy-price"> <%= toy.unit_price %> €</li>
+                <li class="toy-info toy-price"> <%= toy.unit_price %> € / jour</li>
               </div>
               <div class="toy-link-show">
                 <%= link_to "Détails", toy_path(toy), class: "btn btn-primary btn-index-show" %>

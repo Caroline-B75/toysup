@@ -3,6 +3,8 @@
 @import "rent_show";
 @import "show";
 @import "fontawesome-rating";
+@import "my_toys";
+@import "rent_demands";
 
 .indexheader {
   position: relative;
@@ -18,5 +20,9 @@ h1 {
 
 .main {
   min-height: calc(100vh - 180px)
+}
+
+.notice {
+  margin-bottom: 0;
 }
 
