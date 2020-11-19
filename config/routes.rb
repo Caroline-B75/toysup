@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  # get 'toys/category1', to: 'toys#show_0_2_ans', as: :category_1
   resources :toys do
     resources :rents, only: [:new, :create]
   end

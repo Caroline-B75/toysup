@@ -1,6 +1,17 @@
 class ToysController < ApplicationController
+
   def index
-    @toys = Toy.all
+    if params[:search].present?
+      @toys = Toy.search_by_name_and_description_and_category(params[:search][:query])
+    elsif params[:category]
+      @toys = Toy.where(category: params[:category])
+    else
+      @toys = Toy.all
+    end
+  end
+
+  def category_1
+    @toys = Toy.where(category: "0-2 ans")
   end
 
   def show
