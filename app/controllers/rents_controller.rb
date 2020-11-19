@@ -1,6 +1,9 @@
 class RentsController < ApplicationController
   def index
-    @rents = current_user.rents.all
+    rents = current_user.rents.all
+    @new_rents = rents.where(status: "en attente de confirmation").order(id: :desc)
+    @refused_rents = rents.where(status: "refusée").order(id: :desc)
+    @validated_rents = rents.where(status: "validée").order(id: :desc)
   end
 
   def show
