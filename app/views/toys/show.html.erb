@@ -6,9 +6,9 @@
       <div class="show-title">
         <%= @toy.name %></h1>
       </div>
-      <div class="container-left-image">
+      <div>
         <% if @toy.photo.attached? %>
-        <%= cl_image_tag @toy.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag @toy.photo.key, height: 200, width: 250, class: "container-left-image" %>
         <% end %>
       </div>
     </div>
