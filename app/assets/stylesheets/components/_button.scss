@@ -27,3 +27,21 @@
   background-color: #7c308e;
   border: #7c308e;
 }
+
+
+.btn-rent {
+  margin-bottom: 10px;
+  background-color: #1EA896;
+  border: #1EA896;
+  width: 180px;
+  height: 40px;
+  font-size: 20px;
+  font-family: Pacifico;
+}
+
+.btn-rent:hover {
+  background-color: #148879;
+  color: white;
+  text-decoration: none;
+  font-family: Pacifico;
+}
