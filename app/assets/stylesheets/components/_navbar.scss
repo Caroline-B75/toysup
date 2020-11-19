@@ -53,8 +53,8 @@
   background: white;
   margin-right: 10px;
   border: solid #21aa94 1px;
+  border-radius: 15px;
   padding: 5px 10px;
-  border-radius: 5px;
   color: #21aa94;
   &:hover {
     background: #21aa94;
@@ -62,4 +62,11 @@
     color: white;
     opacity: 0.6;
   }
+}
+
+.toysup {
+  position: relative;
+  display: block;
+  margin-left: 38%;
+  margin-right: 30%;
 }
