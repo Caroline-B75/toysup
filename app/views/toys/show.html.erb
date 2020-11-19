@@ -38,31 +38,33 @@
         <h1>L'avis des parents</h1>
         <%= link_to 'Poster un avis', new_toy_review_path(@toy), class: "btn btn-rent" %>
       </div>
-      <p>Note générale : <%= @average_rating.round(1) %></p>
-      <p>Qualité :      
-      <% @average_quality_rating.round.times do %>
-          <i class="fas fa-star"></i>
+      <% if !@average_rating.nil? %>
+        <p>Note générale : <%= @average_rating.round(1) %> / 5</p>
+        <p>Qualité :
+        <% @average_quality_rating.round.times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <% (5 - @average_quality_rating.round).times do %>
+            <i class="far fa-star"></i>
+          <% end %>
+        </p>
+        <p>Sécurité & hygiène :
+        <% @average_security_rating.round.times do %>
+            <i class="fas fa-thumbs-up"></i>
+          <% end %>
+          <% (5 - @average_security_rating.round).times do %>
+            <i class="far fa-thumbs-up"></i>
+          <% end %>
+        </p>
+        <p>Attrait pour l'enfant :
+        <% @average_fun_rating.round.times do %>
+          <i class="fas fa-car-side"></i>
         <% end %>
-        <% (5 - @average_quality_rating.round).times do %>
-          <i class="far fa-star"></i>
+        <% (5 - @average_fun_rating.round).times do %>
+          <i class="far fa-car-side"></i>
         <% end %>
-      </p>
-      <p>Sécurité & hygiène : 
-      <% @average_security_rating.round.times do %>
-          <i class="fas fa-thumbs-up"></i>
-        <% end %>
-        <% (5 - @average_security_rating.round).times do %>
-          <i class="far fa-thumbs-up"></i>
-        <% end %>
-      </p>
-      <p>Attrait pour l'enfant :
-      <% @average_fun_rating.round.times do %>
-        <i class="fas fa-car-side"></i>
+        </p>
       <% end %>
-      <% (5 - @average_fun_rating.round).times do %>
-        <i class="fas fa-car-side"></i>
-      <% end %>
-      </p>
 
       <div class="container mt-5 mb-5">
         <% @toy.reviews.each do |review| %>
@@ -81,7 +83,7 @@
               <% end %>
             </div>
             <div class="col-2">
-              <p>Sécurité et hygiène<br>              
+              <p>Sécurité et hygiène<br>
               <% review.security_rating.times do %>
                 <i class="fas fa-thumbs-up"></i>
               <% end %>
