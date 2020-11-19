@@ -6,4 +6,5 @@ class Toy < ApplicationRecord
   validates :unit_price, numericality: true
   validates_inclusion_of :category, in: CATEGORY
   has_one_attached :photo
+  has_many :reviews, dependent: :destroy
 end
