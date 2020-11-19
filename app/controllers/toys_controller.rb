@@ -10,10 +10,6 @@ class ToysController < ApplicationController
     end
   end
 
-  def category_1
-    @toys = Toy.where(category: "0-2 ans")
-  end
-
   def show
     @toy = Toy.find(params[:id])
   end
