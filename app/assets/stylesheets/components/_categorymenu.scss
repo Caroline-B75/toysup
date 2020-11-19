@@ -5,6 +5,7 @@
   justify-content: center;
   position: relative;
   top: 15px;
+  margin-bottom: 20px;
 }
 
 .categorycards {
@@ -15,12 +16,13 @@
   text-align: center;
 }
 
-.categorycards p {
+.categorycards a {
   font-family: Pacifico;
   color: #1EA896;
   font-size: 25px;
   line-height: 40px;
 }
+
 
 .categorycards a:hover {
   font-family: Pacifico;
