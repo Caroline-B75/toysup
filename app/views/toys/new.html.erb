@@ -1,18 +1,18 @@
-<div class="container mt-5 mb-5">
-  <h1 class="mb-5">J'ajoute mon jouet :</h1>
-  <div class="d-flex justify-content-center">
+  <h1 class="mb-5 mt-5">J'ajoute mon jouet :</h1>
+  <div class="justify-content-center">
 
     <%= simple_form_for [ @toy ] do |f| %>
-      <%= f.input :name, label:"Le nom du jouet " %>
-      <%= f.input :description, label: "Sa description " %>
-      <%= f.input :category, :collection => Toy::CATEGORY %>
-      <%= f.input :photo, label:"Je rajoute une photo", as: :file%>
-      <%= f.input :unit_price, label:"Prix par jour ", as: :integer %>
-      <%= f.submit "Ajouter mon jouet", class: "btn btn-success" %>
+      <div class="new-toy-form">
+        <%= f.input :name, label:"Le nom du jouet " %>
+        <%= f.input :description, label: "Sa description " %>
+        <%= f.input :category, :collection => Toy::CATEGORY %>
+        <%= f.input :photo, label:"Je rajoute une photo", as: :file %>
+        <%= f.input :unit_price, label:"Prix par jour ", as: :integer %>
+        <%= f.submit "Ajouter mon jouet", class: "btn btn-success" %>
+      </div>
     <% end %>
-
   </div>
-</div>
+
 
 
 
