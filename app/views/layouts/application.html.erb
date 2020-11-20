@@ -24,6 +24,9 @@
       </div>
 
       <div class="d-inline-flex align-items-center">
+        <%= link_to "Mes jouets", user_toys_path, class: "dropdown-item" %>
+        <%= link_to "Mes locations", rents_path, class: "dropdown-item" %>
+        <%= link_to "Mes demandes", user_rent_demands_path, class: "dropdown-item" %>
         <%= link_to "Mettre un jouet en location", new_toy_path , class: "btn-add-toy" %>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
