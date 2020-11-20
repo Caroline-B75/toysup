@@ -1,6 +1,7 @@
 <div class="rent-container">
   <h1>Mes locations</h1>
-    <%= link_to "Louer un autre jouet", toys_path, class: 'btn btn-all-rents' %>
+    <%= link_to "Louer un autre jouet", toys_path, class: 'btn btn-rent-another-toy' %>
+
   <h2>Locations en attente de confirmation</h2>
   <% if @new_rents.empty? %>
     <h3>Aucune demande de location en attente de confirmation</h3>
