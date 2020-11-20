@@ -14,7 +14,7 @@
         <p><%= @rent.duration %> jours</p>
         <h5>Prix total de la location :</h5>
         <p><%= @rent.price %>€</p>
-        <%= link_to "Annuler ma location", rent_path, method: :delete, data: { confirm: "Êtes-vous sûr ?" }, class: 'btn-cancel-rent' %>
+        <%= link_to "Annuler ma location", rent_path, method: :delete, data: { confirm: "Êtes-vous sûr ?" }, class: 'btn btn-list-rent-delete' %>
       </div>
       <hr>
       <div class="rent-photo">

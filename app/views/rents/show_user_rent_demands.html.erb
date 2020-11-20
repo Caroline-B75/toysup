@@ -22,7 +22,7 @@
               </div>
             </div>
             <div class="demand-by-user">
-              <h4>Demande effectuée par <%= User.find(rent.user_id).name %></h4>
+              <h4>Effectuée par <%= User.find(rent.user_id).name %> le <%= (rent.created_at).to_s.match(/\d{4}-\d{2}-\d{2}/) %></h4>
             </div>
             <div class="demand-footer">
               <%= link_to "Confirmer", accept_rent_path(rent), method: :patch, data: { confirm: "Êtes-vous sûr ?" }, class: 'btn btn-rentee-confirm' %>
@@ -55,7 +55,7 @@
             </div>
           </div>
           <div class="demand-by-user">
-            <h4>Demande effectuée par <%= User.find(rent.user_id).name %></h4>
+            <h4>Effectuée par <%= User.find(rent.user_id).name %> le <%= (rent.created_at).to_s.match(/\d{4}-\d{2}-\d{2}/) %></h4>
           </div>
           <div class="demand-footer">
             <%= link_to "Retirer de ma liste", rent_path(rent), method: :delete, class: 'btn btn-list-rent-delete' %>
@@ -87,7 +87,7 @@
             </div>
           </div>
           <div class="demand-by-user">
-            <h4>Demande effectuée par <%= User.find(rent.user_id).name %></h4>
+            <h4>Effectuée par <%= User.find(rent.user_id).name %> le <%= (rent.created_at).to_s.match(/\d{4}-\d{2}-\d{2}/) %></h4>
           </div>
           <div class="demand-footer">
             <%= link_to "Retirer de ma liste", rent_path(rent), method: :delete, class: 'btn btn-list-rent-delete' %>
