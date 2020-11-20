@@ -38,39 +38,55 @@
         <h1>L'avis des parents</h1>
         <%= link_to 'Poster un avis', new_toy_review_path(@toy), class: "btn btn-rent" %>
       </div>
-      <% if !@average_rating.nil? %>
-        <p>Note générale : <%= @average_rating.round(1) %> / 5</p>
-        <p>Qualité :
-        <% @average_quality_rating.round.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
-          <% (5 - @average_quality_rating.round).times do %>
-            <i class="far fa-star"></i>
-          <% end %>
-        </p>
-        <p>Sécurité & hygiène :
-        <% @average_security_rating.round.times do %>
-            <i class="fas fa-thumbs-up"></i>
-          <% end %>
-          <% (5 - @average_security_rating.round).times do %>
-            <i class="far fa-thumbs-up"></i>
-          <% end %>
-        </p>
-        <p>Attrait pour l'enfant :
-        <% @average_fun_rating.round.times do %>
-          <i class="fas fa-car-side"></i>
-        <% end %>
-        <% (5 - @average_fun_rating.round).times do %>
-          <i class="far fa-car-side"></i>
-        <% end %>
-        </p>
-      <% end %>
 
       <div class="container mt-5 mb-5">
-        <% @toy.reviews.each do |review| %>
-          <div class="container border-secondary mb-2 bg-white">
+        <% if !@average_rating.nil? %>
+          <div class="container border-secondary mb-2">
+            <div class="row pt-3 general-review">
+              <div class="col-6">
+                <p class="lead align-middle pt-1">Note générale : <%= @average_rating.round(1) %> / 5</p>
+              </div>
+              <div class="col-2">
+                <p>Qualité du jouet<br>
+                <% @average_quality_rating.round.times do %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+                <% (5 - @average_quality_rating.round).times do %>
+                  <i class="far fa-star"></i>
+                <% end %>
+                </p>
+              </div>
+              <div class="col-2">
+                <p>Sécurité et hygiène<br>
+                <% @average_security_rating.round.times do %>
+                  <i class="fas fa-thumbs-up"></i>
+                <% end %>
+                <% (5 - @average_security_rating.round).times do %>
+                  <i class="far fa-thumbs-up"></i>
+                <% end %>
+                </p>
+              </div>
+              <div class="col-2">
+                <p>Attrait de l'enfant<br>
+                <% @average_fun_rating.round.times do %>
+                  <i class="fas fa-laugh-beam"></i>
+                <% end %>
+                <% (5 - @average_fun_rating.round).times do %>
+                  <i class="far fa-laugh-beam"></i>
+                <% end %>
+                </p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="container mt-5 mb-5">
+        <% @toy.reviews.order(id: :desc).each do |review| %>
+          <div class="container border-secondary mb-2 review">
             <div class="row">
             <div class="col-6">
+              <p id="author-review"> par <%= User.find(Toy.find(review.toy_id).user_id).name %>  |  <%= (review.created_at).to_s.match(/\d{4}-\d{2}-\d{2}/) %></p>
               <p><%= review.content %></p>
             </div>
             <div class="col-2">
@@ -94,10 +110,10 @@
             <div class="col-2">
               <p>Attrait de l'enfant<br>
               <% review.fun_rating.times do %>
-                <i class="fas fa-car-side"></i>
+                <i class="fas fa-laugh-beam"></i>
               <% end %>
               <% (5 - review.fun_rating).times do %>
-                <i class="far fa-car-side"></i>
+                <i class="far fa-laugh-beam"></i>
               <% end %></p>
             </div>
             </div>

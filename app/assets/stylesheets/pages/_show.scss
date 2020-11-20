@@ -90,3 +90,30 @@
   text-decoration: none;
   font-family: Pacifico;
 }
+
+.general-review {
+  padding-top: 1rem;
+  background-color: #F1E0F5;
+  box-shadow: 5px 5px 5px lightgrey;
+  border-radius: 15px;
+  color: #343a40;
+  align-content: center;
+  align-items: center;
+}
+
+.review {
+  padding-top: 1rem;
+  background-color: white;
+  border-radius: 15px;
+  color: #343a40;
+  align-content: center;
+  align-items: center;
+}
+
+.fas{
+  color: #43194d;
+}
+
+#author-review {
+  color: gray;
+}
