@@ -5,10 +5,10 @@
         <div class="my-toy-name">
           <%= f.input :name %>
         </div>
+        <div>
+          <%= cl_image_tag @toy.photo.key, width: 300, height: 350, class: "my-toy-photo" %>
+        </div>
         <div class="my-toy-content">
-          <div class="my-toy-photo">
-            <%= cl_image_tag @toy.photo.key, width: 300, height: 350, crop: :fill %>
-          </div>
           <div class="my-toy-info">
             <h5>Photo :</h5>
             <%= f.input :photo, label:"Je rajoute une photo", as: :file, label: false%>
