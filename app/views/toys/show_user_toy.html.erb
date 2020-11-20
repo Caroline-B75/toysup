@@ -1,4 +1,4 @@
-<div class="my-toys-container">
+<div class="my-toys-container mt-4">
   <h1>Mes jouets en location</h1>
   <div class="my-toy-container">
     <% @toys.each do |toy|  %>
@@ -6,10 +6,10 @@
         <div class="my-toy-name">
           <p>Les infos sur <%= toy.name %></p>
         </div>
-        <div>
-          <%= cl_image_tag toy.photo.key, width: 200, height: 200, class: "my-toy-photo" %>
-        </div>
         <div class="my-toy-content">
+          <div>
+            <%= cl_image_tag toy.photo.key, width: 200, height: 200, class: "my-toy-photo" %>
+          </div>
           <div class="my-toy-info">
             <h5>Description :</h5>
             <p><%= toy.description %></p>
