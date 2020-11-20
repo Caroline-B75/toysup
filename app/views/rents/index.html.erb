@@ -11,6 +11,8 @@
           <div class="rent-card">
             <div class="rent-content">
               <div class="rent-info">
+                <h5>Effectuée le:</h5>
+                <p><%= (rent.created_at).to_s.match(/\d{4}-\d{2}-\d{2}/) %></p>
                 <h5>Jouet :</h5>
                 <p><%= Toy.find(rent.toy_id).name %></p>
                 <h5>Loué par :</h5>
@@ -42,6 +44,8 @@
           <div class="rent-card-validated">
             <div class="rent-content">
               <div class="rent-info">
+                <h5>Effectuée le:</h5>
+                <p><%= (rent.created_at).to_s.match(/\d{4}-\d{2}-\d{2}/) %></p>
                 <h5>Jouet :</h5>
                 <p><%= Toy.find(rent.toy_id).name %></p>
                 <h5>Loué par :</h5>
@@ -72,6 +76,8 @@
           <div class="rent-card-refused">
             <div class="rent-content">
               <div class="rent-info">
+                <h5>Effectuée le:</h5>
+                <p><%= (rent.created_at).to_s.match(/\d{4}-\d{2}-\d{2}/) %></p>
                 <h5>Jouet :</h5>
                 <p><%= Toy.find(rent.toy_id).name %></p>
                 <h5>Loué par :</h5>
