@@ -8,7 +8,7 @@
       </div>
       <div>
         <% if @toy.photo.attached? %>
-        <%= cl_image_tag @toy.photo.key, height: 200, width: 250, class: "container-left-image" %>
+        <%= cl_image_tag @toy.photo.key, class: "container-left-image" %>
         <% end %>
       </div>
     </div>

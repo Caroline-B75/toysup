@@ -1,7 +1,11 @@
 .navbar-lewagon {
+  z-index: 10;
   justify-content: space-between;
+  position: sticky;
+  top: 0px;
   background: white;
   height: 100px;
+  box-shadow: 5px 5px 5px #d3d3d39e;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -65,8 +69,6 @@
 }
 
 .toysup {
-  position: relative;
-  display: block;
-  margin-left: 38%;
-  margin-right: 30%;
+  position: static;
+  margin-left: 5%;
 }
